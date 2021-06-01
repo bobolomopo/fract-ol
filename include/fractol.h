@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:52:26 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/01 18:36:05 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/01 19:40:04 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ int		manage_key(int keycode, t_display *dis);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void    ft_init_pos_screen(t_display *dis, double x, double y, double scale);
 void 	mandlebrot(t_display *dis);
+int		zoom(int button, t_display *dis);
 
 #endif
