@@ -6,40 +6,18 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:44:07 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/01 12:54:00 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/01 13:11:51 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/fractol.h"
-
-int	ft_close(t_display *dis)
-{
-	if (dis->img.img)
-		mlx_destroy_image(dis->mlx, dis->img.img);
-	if (dis->win)
-		mlx_destroy_window(dis->mlx, dis->win);
-	exit(0);
-}
-
-int	manage_key(int keycode, t_display *dis)
-{
-	if (keycode == 53)
-		ft_close(dis);
-	return (1);
-}
-
-int	error_arg(void)
-{
-	write(1, ERROR_ARG, ERROR_ARG_LENGTH);
-	exit(0);
-}
 
 int main(int argc, char **argv)
 {
 	t_display	dis;
 	t_img   	img;
 	
-	if (argc < 2 || argc > 3)
+	if (argc < 2 || argc > 3 || is_arg_valid(argv) < 0)
 		return (error_arg());
 	dis.mlx = mlx_init();
 	dis.win = mlx_new_window(dis.mlx, RES_X, RES_Y, "fract-ol");
