@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:44:07 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 15:30:20 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/02 18:14:56 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main(int argc, char **argv)
 			&dis.img.endian);
 	ft_init_pos_screen(&dis, STARTING_X, STARTING_Y, STARTING_SCALE);
 	mandlebrot(&dis);
-	printf("%f\n", (double)6 / (double)RES_X);
 	mlx_put_image_to_window(dis.mlx, dis.win, dis.img.img, 0, 0);
 	mlx_hook(dis.win, 2, 1L << 0, manage_key, &dis);
 	mlx_hook(dis.win, 17, 0, ft_close, &dis);

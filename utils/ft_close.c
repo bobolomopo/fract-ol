@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 12:56:41 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/01 17:01:31 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/02 17:40:02 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,10 @@ int	ft_close(t_display *dis)
 		mlx_destroy_window(dis->mlx, dis->win);
 	exit(0);
 }
+/*
+int display_error(t_display *dis, int error)
+{
+	if (error == 1)
+		write(1, ERROR_MEMORY, ERROR_MEMORY_LENGTH);
+	return (ft_close(dis));
+}*/
