@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 12:56:41 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 19:11:15 by jandre           ###   ########.fr       */
+/*   Created: 2021/06/02 19:09:47 by jandre            #+#    #+#             */
+/*   Updated: 2021/06/02 19:10:01 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	ft_close(t_display *dis)
+char	*ft_strdup(char *src)
 {
-	if (dis->str)
-		free(dis->str);
-	if (dis->img.img)
-		mlx_destroy_image(dis->mlx, dis->img.img);
-	if (dis->win)
-		mlx_destroy_window(dis->mlx, dis->win);
-	exit(0);
+	char	*new;
+	int		i;
+	int		size;
+
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		new[i] = src[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }
-/*
-int display_error(t_display *dis, int error)
-{
-	if (error == 1)
-		write(1, ERROR_MEMORY, ERROR_MEMORY_LENGTH);
-	return (ft_close(dis));
-}*/

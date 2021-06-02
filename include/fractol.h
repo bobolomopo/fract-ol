@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:52:26 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 18:14:02 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/02 19:16:34 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct		s_display	{
 	void				*win;
 	t_img				img;
 	t_pos				pos;
+	char				*str;
 }					t_display;
 
 int		ft_strcmp(const char *s1, const char *s2);
@@ -103,5 +104,9 @@ void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void    ft_init_pos_screen(t_display *dis, double x, double y, double scale);
 void 	mandlebrot(t_display *dis);
 int		zoom(int button, int x, int y, t_display *dis);
+char	*ft_strdup(char *src);
+int		ft_draw_which(t_display *dis);
+void	julia(t_display *dis);
+
 
 #endif
