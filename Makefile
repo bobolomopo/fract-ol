@@ -10,8 +10,8 @@ all: $(NAME)
 
 $(NAME):
 	make -C ./mlx all
-	mv ./mlx/libmlx.dylib ./
-	$(CC) $(SRC) -g -fsanitize=address -lmlx -lmlx libmlx.dylib -framework OpenGL -framework AppKit -o $(NAME)
+	mv ./mlx/libmlx.a ./
+	$(CC) $(SRC) -g -fsanitize=address -lmlx -lmlx libmlx.a -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@

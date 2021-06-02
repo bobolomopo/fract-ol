@@ -6,17 +6,17 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:52:26 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/01 19:40:04 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/02 15:27:00 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # ifndef RES_X
-#  define RES_X 800
+#  define RES_X 1400
 # endif
 # ifndef RES_Y
-#  define RES_Y 600
+#  define RES_Y 1000
 # endif
 
 // ERROR_MSG
@@ -79,6 +79,7 @@ typedef struct		s_pos		{
 	double				up_limit;
 	double				down_limit;
 	double				scale;
+	double				zoom;
 }					t_pos;
 
 typedef struct		s_display	{
@@ -98,6 +99,6 @@ int		manage_key(int keycode, t_display *dis);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void    ft_init_pos_screen(t_display *dis, double x, double y, double scale);
 void 	mandlebrot(t_display *dis);
-int		zoom(int button, t_display *dis);
+int		zoom(int button, int x, int y, t_display *dis);
 
 #endif
