@@ -6,11 +6,11 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:44:07 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 17:35:00 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 18:15:43 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/fractol.h"
+#include "../include/fractol.h"
 
 int	main(int argc, char **argv)
 {
