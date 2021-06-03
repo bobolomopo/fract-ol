@@ -6,13 +6,13 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 17:04:35 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/01 12:56:03 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:48:23 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned int	i;
 

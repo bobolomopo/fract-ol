@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 19:09:47 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 19:10:01 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:50:09 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strdup(char *src)
 	size = 0;
 	while (src[size])
 		++size;
-	if (!(new = malloc(sizeof(char) * (size + 1))))
+	new = malloc(sizeof(char) * (size + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (src[i])

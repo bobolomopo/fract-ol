@@ -6,13 +6,13 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:44:07 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 15:22:00 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:35:00 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/fractol.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_display	dis;
 
@@ -21,8 +21,8 @@ int main(int argc, char **argv)
 	dis.mlx = mlx_init();
 	dis.win = mlx_new_window(dis.mlx, RES_X, RES_Y, "fract-ol");
 	dis.img.img = mlx_new_image(dis.mlx, RES_X, RES_Y);
-	dis.img.addr = mlx_get_data_addr(dis.img.img, &dis.img.bits_per_pixel, &dis.img.line_length,
-			&dis.img.endian);
+	dis.img.addr = mlx_get_data_addr(dis.img.img, &dis.img.bits_per_pixel,
+			&dis.img.line_length, &dis.img.endian);
 	dis.str = ft_strdup(argv[1]);
 	ft_init_pos_screen(&dis, STARTING_X, STARTING_Y, STARTING_SCALE);
 	ft_init_mouse_pos(RES_X / 2, RES_Y / 2, &dis);

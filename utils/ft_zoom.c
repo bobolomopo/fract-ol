@@ -6,13 +6,13 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 18:37:06 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 16:52:17 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:50:28 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int zoom(int button, int x, int y, t_display *dis)
+int	zoom(int button, int x, int y, t_display *dis)
 {
 	double		scale;
 	double		pos_x;
@@ -30,7 +30,6 @@ int zoom(int button, int x, int y, t_display *dis)
 	}
 	else if (button == SCROLL_DOWN)
 	{
-
 		pos_x = dis->pos.right_limit + scale * 0.05;
 		pos_y = dis->pos.up_limit + scale * 0.05;
 		scale *= 1.10;

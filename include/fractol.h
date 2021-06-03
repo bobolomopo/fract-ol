@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:52:26 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 16:56:28 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:55:56 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # endif
 
 // ERROR_MSG
-# define ERROR_ARG "ERROR : Put a valid argument\nDisponible arguments : \"Julia\" and \"Mandlebrot\"\n"
 # define ERROR_MEMORY "ERROR : Error during memory allocation"
 # define ERROR_MEMORY_LENGTH 39  
 # define ERROR_ARG_LENGTH 77
@@ -61,12 +60,12 @@
 # include <limits.h>
 # include "../mlx/mlx.h"
 
-typedef struct		s_complex	{
+typedef struct s_complex {
 	double				re;
 	double				im;
 }					t_complex;
 
-typedef struct		s_img		{
+typedef struct s_img {
 	void				*img;
 	char				*addr;
 	int					bits_per_pixel;
@@ -76,7 +75,7 @@ typedef struct		s_img		{
 	int					height;
 }					t_img;
 
-typedef struct		s_pos		{
+typedef struct s_pos {
 	double				left_limit;
 	double				right_limit;
 	double				up_limit;
@@ -85,7 +84,7 @@ typedef struct		s_pos		{
 	double				zoom;
 }					t_pos;
 
-typedef struct		s_display	{
+typedef struct s_display {
 	void				*mlx;
 	void				*win;
 	t_img				img;
@@ -102,8 +101,8 @@ int		is_arg_valid(char **argv);
 int		error_arg(void);
 int		manage_key(int keycode, t_display *dis);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
-void    ft_init_pos_screen(t_display *dis, double x, double y, double scale);
-void 	mandlebrot(t_display *dis);
+void	ft_init_pos_screen(t_display *dis, double x, double y, double scale);
+void	mandlebrot(t_display *dis);
 int		zoom(int button, int x, int y, t_display *dis);
 char	*ft_strdup(char *src);
 int		ft_draw_which(t_display *dis);

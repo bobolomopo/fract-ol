@@ -6,13 +6,13 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:16:32 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 17:23:08 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:44:02 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-static int number_iteration(t_display *dis, int x, int y)
+static int	number_iteration(t_display *dis, int x, int y)
 {
 	t_complex	base;
 	t_complex	temp;
@@ -21,8 +21,8 @@ static int number_iteration(t_display *dis, int x, int y)
 
 	base.re = 0;
 	base.im = 0;
-	add.re = dis->pos.left_limit + ((double)x * (dis->pos.scale / (double)RES_X));
-	add.im = dis->pos.up_limit - ((double)y * (dis->pos.scale / (double)RES_Y));
+	add.re = dis->pos.left_limit + (x * (dis->pos.scale / RES_X));
+	add.im = dis->pos.up_limit - (y * (dis->pos.scale / RES_Y));
 	i = 0;
 	while (base.im + base.re <= 4 && i < 61)
 	{
@@ -35,10 +35,29 @@ static int number_iteration(t_display *dis, int x, int y)
 	return (i);
 }
 
-void mandlebrot(t_display *dis)
+static void	draw(t_display *dis, int x, int y, int i)
 {
-	int     x;
-	int     y;
+	i = number_iteration(dis, x, y);
+	if (i < 10)
+		my_mlx_pixel_put(&dis->img, x, y, WHITE);
+	else if (i < 20)
+		my_mlx_pixel_put(&dis->img, x, y, YELLOW);
+	else if (i < 30)
+		my_mlx_pixel_put(&dis->img, x, y, RED);
+	else if (i < 40)
+		my_mlx_pixel_put(&dis->img, x, y, MAJENTA);
+	else if (i < 50)
+		my_mlx_pixel_put(&dis->img, x, y, CYAN);
+	else if (i < 60)
+		my_mlx_pixel_put(&dis->img, x, y, BLUE);
+	else
+		my_mlx_pixel_put(&dis->img, x, y, BLACK);
+}
+
+void	mandlebrot(t_display *dis)
+{
+	int		x;
+	int		y;
 	int		i;
 
 	y = 0;
@@ -47,21 +66,7 @@ void mandlebrot(t_display *dis)
 		x = 0;
 		while (x < RES_X)
 		{
-			i = number_iteration(dis, x, y);
-			if (i < 10)
-				my_mlx_pixel_put(&dis->img, x, y, WHITE);
-			else if (i < 20)
-				my_mlx_pixel_put(&dis->img, x, y, YELLOW);
-			else if (i < 30)
-				my_mlx_pixel_put(&dis->img, x, y, RED);
-			else if (i < 40)
-				my_mlx_pixel_put(&dis->img, x, y, MAJENTA);
-			else if (i < 50)
-				my_mlx_pixel_put(&dis->img, x, y, CYAN);
-			else if (i < 60)
-				my_mlx_pixel_put(&dis->img, x, y, BLUE);
-			else
-				my_mlx_pixel_put(&dis->img, x, y, BLACK);
+			draw(dis, x, y, i);
 			x++;
 		}
 		y++;

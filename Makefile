@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME):
 	make -C ./mlx all
 	mv ./mlx/libmlx.a ./
-	$(CC) $(SRC) -g -fsanitize=address -lmlx -lmlx libmlx.a -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(SRC) -lmlx -lmlx libmlx.a -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@

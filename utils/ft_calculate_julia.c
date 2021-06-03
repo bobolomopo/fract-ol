@@ -6,13 +6,13 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 18:53:55 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 15:26:53 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 17:36:26 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-static int number_iteration(t_display *dis, int x, int y)
+static int	number_iteration(t_display *dis, int x, int y)
 {
 	t_complex	base;
 	t_complex	temp;
@@ -37,9 +37,9 @@ static int number_iteration(t_display *dis, int x, int y)
 
 void	julia(t_display *dis)
 {
-	int     	x;
-	int     	y;
-	int			i;
+	int		x;
+	int		y;
+	int		i;
 
 	y = 0;
 	while (y < RES_Y)
