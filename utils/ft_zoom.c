@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 18:37:06 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 16:10:35 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 16:52:17 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ int zoom(int button, int x, int y, t_display *dis)
 	scale = dis->pos.scale;
 	if (button == SCROLL_UP)
 	{
+		pos_x = dis->pos.right_limit - scale * 0.05;
+		pos_y = dis->pos.up_limit - scale * 0.05;
 		scale *= 0.90;
-		pos_x = dis->pos.left_limit * 0.9;
-		pos_y = dis->pos.up_limit * 0.9;
 		ft_init_pos_screen(dis, pos_x, pos_y, scale);
 	}
-	if (button == SCROLL_DOWN)
+	else if (button == SCROLL_DOWN)
 	{
+
+		pos_x = dis->pos.right_limit + scale * 0.05;
+		pos_y = dis->pos.up_limit + scale * 0.05;
 		scale *= 1.10;
-		pos_x = dis->pos.left_limit * 1.1;
-		pos_y = dis->pos.up_limit * 1.1;
 		ft_init_pos_screen(dis, pos_x, pos_y, scale);
 	}
-	mlx_clear_window(dis->mlx, dis->win);
 	ft_draw_which(dis);
 	mlx_put_image_to_window(dis->mlx, dis->win, dis->img.img, 0, 0);
 	return (1);
