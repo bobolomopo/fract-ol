@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:16:32 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 17:37:47 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 15:37:14 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,16 @@ void mandlebrot(t_display *dis)
 			i = number_iteration(dis, x, y);
 			if (i > 80)
 				my_mlx_pixel_put(&dis->img, x, y, BLACK);
-			else if (i > 50)
+			else if (i > 70)
 				my_mlx_pixel_put(&dis->img, x, y, BLUE);
-			else if (i > 30)
+			else if (i > 60)
 				my_mlx_pixel_put(&dis->img, x, y, CYAN);
+			else if (i > 60)
+				my_mlx_pixel_put(&dis->img, x, y, MAJENTA);
+			else if (i > 60)
+				my_mlx_pixel_put(&dis->img, x, y, RED);
+			else if (i > 60)
+				my_mlx_pixel_put(&dis->img, x, y, YELLOW);
 			else
 				my_mlx_pixel_put(&dis->img, x, y, WHITE);
 			x++;

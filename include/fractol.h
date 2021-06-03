@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:52:26 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 19:16:34 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 16:06:22 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # endif
 
 // ERROR_MSG
-# define ERROR_ARG "ERROR : Put a valid argument\nDisponible arguments : Julia and Mandlebrot\n"
+# define ERROR_ARG "ERROR : Put a valid argument\nDisponible arguments : \"Julia\" and \"Mandlebrot\"\n"
 # define ERROR_MEMORY "ERROR : Error during memory allocation"
 # define ERROR_MEMORY_LENGTH 39  
-# define ERROR_ARG_LENGTH 73
+# define ERROR_ARG_LENGTH 77
 
 // SIZE
 # define SIZE_X 2000
@@ -48,9 +48,9 @@
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
 
-# define STARTING_X 1
-# define STARTING_Y 1
-# define STARTING_SCALE 2
+# define STARTING_X 1.5
+# define STARTING_Y 1.5
+# define STARTING_SCALE 3
 
 # include <math.h>
 # include <fcntl.h>
@@ -90,6 +90,7 @@ typedef struct		s_display	{
 	void				*win;
 	t_img				img;
 	t_pos				pos;
+	t_complex			mouse;
 	char				*str;
 }					t_display;
 
@@ -107,6 +108,7 @@ int		zoom(int button, int x, int y, t_display *dis);
 char	*ft_strdup(char *src);
 int		ft_draw_which(t_display *dis);
 void	julia(t_display *dis);
-
+int		ft_init_mouse_pos(int x, int y, t_display *dis);
+int		ft_julia_motion(int x, int y, t_display *dis);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:01:15 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/02 19:17:48 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 15:11:16 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	manage_key(int keycode, t_display *dis)
 {
 	double	zoom;
 
-	if (strcmp(dis->str, "Julia") == 0)
-		return (1);
-	mlx_clear_window(dis->mlx, dis->win);
 	zoom = dis->pos.zoom;
 	if (keycode == 53)
 		ft_close(dis);
+	if (strcmp(dis->str, "Julia") == 0)
+		return (1);
+	mlx_clear_window(dis->mlx, dis->win);
 	if (keycode == LEFT_KEY)
 		ft_init_pos_screen(dis, dis->pos.right_limit + (0.1 * zoom), dis->pos.up_limit, dis->pos.scale);
 	if (keycode == RIGHT_KEY)
