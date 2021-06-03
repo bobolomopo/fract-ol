@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:16:32 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 17:44:02 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/03 18:05:47 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ static int	number_iteration(t_display *dis, int x, int y)
 	return (i);
 }
 
-static void	draw(t_display *dis, int x, int y, int i)
+static void	draw(t_display *dis, int x, int y)
 {
+	int		i;
+
 	i = number_iteration(dis, x, y);
 	if (i < 10)
 		my_mlx_pixel_put(&dis->img, x, y, WHITE);
@@ -58,7 +60,6 @@ void	mandlebrot(t_display *dis)
 {
 	int		x;
 	int		y;
-	int		i;
 
 	y = 0;
 	while (y < RES_Y)
@@ -66,7 +67,7 @@ void	mandlebrot(t_display *dis)
 		x = 0;
 		while (x < RES_X)
 		{
-			draw(dis, x, y, i);
+			draw(dis, x, y);
 			x++;
 		}
 		y++;
