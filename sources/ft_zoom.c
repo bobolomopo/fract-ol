@@ -6,7 +6,7 @@
 /*   By: jandre <jandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 18:37:06 by jandre            #+#    #+#             */
-/*   Updated: 2021/06/03 18:05:00 by jandre           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:40:49 by jandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	zoom(int button, int x, int y, t_display *dis)
 	double		pos_x;
 	double		pos_y;
 
-	if (strcmp(dis->str, "Julia") == 0)
-		return (1);
 	scale = dis->pos.scale;
 	x += y;
 	if (button == SCROLL_UP)
